@@ -1,10 +1,12 @@
 # Vagrant config file to create your LEDGER environment dev
 
+Manages a minimalistic virtual machine in which we install `gcc-arm-none-eabi` cross-compiler tools for compiling to the Nano and the BOLOS_SDK appropriate for building BOLOS apps for the Nano S.
+
 ## Installation
 - Install Vagrant and Virtualbox on your machine
 - Run the following
 ```
-> git clone https://github.com/fix/ledger-vagrant
+> git clone https://github.com/christophersanborn/ledger-vagrant.git
 > cd ledger-vagrant
 > vagrant up
 ```
@@ -30,8 +32,8 @@ make
 ## Known issues
 - USB port is locked out of the host machine, making tests rather tedious (needs to tear down `vagrant halt`) to test ledger on host machine
 - on Ubuntu, if the dongle is not found in the vagrant box, be sure that your **host** user belongs to the vboxusers group `sudo usermod -aG vboxusers <username>` (see https://askubuntu.com/questions/25596/how-to-set-up-usb-for-virtualbox/25600#25600)
-- if you have some issue involving wrong TARGET_ID, please either upgrade your nano S firmware to 1.4.x, either downgrade nano s secure sdk tag to nano-1314:
+- if you have some issue involving wrong TARGET_ID, please either upgrade your nano S firmware to 1.5.x, or downgrade nano s secure sdk tag to nanos-1421 or nanos-1314:
 ```
 cd /opt/bolos/nanos-secure-sdk
-sudo git checkout tags/nanos-1314
+sudo git checkout tags/nanos-1421
 ```
