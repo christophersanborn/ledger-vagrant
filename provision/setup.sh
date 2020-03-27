@@ -5,8 +5,10 @@ dpkg --add-architecture i386
 apt-get update  > /dev/null
 apt-get install git curl python-dev python-pip python-pil python-setuptools zlib1g-dev libjpeg-dev libudev-dev build-essential libusb-1.0-0-dev -y > /dev/null
 apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 libc6-dev-i386 -y > /dev/null
-pip install --upgrade setuptools
-pip install ledgerblue
+pip install setuptools==41.0.0
+pip install ECPy==0.10.0
+pip install pillow==5.4.1
+pip install ledgerblue==0.1.23
 
 echo "Setting up BOLOS environment"
 mkdir /opt/bolos
@@ -28,11 +30,11 @@ echo "cloning sdk for nano s"
 cd /opt/bolos/
 git clone https://github.com/LedgerHQ/nanos-secure-sdk.git
 cd nanos-secure-sdk/
-git checkout tags/nanos-1421
+git checkout tags/nanos-1553
 cd /opt/bolos/
 
 echo "finetuning rights for usb access"
-wget -q -O - https://raw.githubusercontent.com/LedgerHQ/udev-rules/master/add_udev_rules.sh | bash
+wget -q -O - https://raw.githubusercontent.com/LedgerHQ/udev-rules/20cc1651eb551c4855aaa56628c77eaeb3031c22/add_udev_rules.sh | bash
 usermod -a -G plugdev vagrant
 
 echo "Setting up bash profile"

@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
 
   # VM specific configs
   config.vm.provider "virtualbox" do |v|
-  	v.name = "Ledger development box"
+  	v.name = "Ledger development box bitshares"
   	v.customize ["modifyvm", :id, "--memory", "1024"]
 
     # Connect Ledger Nano S throug usb
