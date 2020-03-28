@@ -46,7 +46,10 @@ echo "SUBSYSTEMS==\"usb\", ATTRS{idVendor}==\"2581\", ATTRS{idProduct}==\"1807\"
 echo "SUBSYSTEMS==\"usb\", ATTRS{idVendor}==\"2581\", ATTRS{idProduct}==\"1808\", MODE=\"0660\", GROUP=\"plugdev\"" >>/etc/udev/rules.d/20-Ledger.rules
 echo "SUBSYSTEMS==\"usb\", ATTRS{idVendor}==\"2c97\", ATTRS{idProduct}==\"0000\", MODE=\"0660\", GROUP=\"plugdev\"" >>/etc/udev/rules.d/20-Ledger.rules
 echo "SUBSYSTEMS==\"usb\", ATTRS{idVendor}==\"2c97\", ATTRS{idProduct}==\"0001\", MODE=\"0660\", GROUP=\"plugdev\"" >>/etc/udev/rules.d/20-Ledger.rules
+echo "SUBSYSTEMS==\"usb\", ATTRS{idVendor}==\"2c97\", ATTRS{idProduct}==\"0004\", MODE=\"0660\", GROUP=\"plugdev\"" >>/etc/udev/rules.d/20-Ledger.rules
+echo "SUBSYSTEMS==\"usb\", ATTRS{idVendor}==\"2c97\", ATTRS{idProduct}==\"1005\", MODE=\"0660\", GROUP=\"plugdev\"" >>/etc/udev/rules.d/20-Ledger.rules
 echo "SUBSYSTEMS==\"usb\", ATTRS{idVendor}==\"2c97\", ATTRS{idProduct}==\"1011\", MODE=\"0660\", GROUP=\"plugdev\"" >>/etc/udev/rules.d/20-Ledger.rules
+echo "SUBSYSTEMS==\"usb\", ATTRS{idVendor}==\"2c97\", ATTRS{idProduct}==\"1015\", MODE=\"0660\", GROUP=\"plugdev\"" >>/etc/udev/rules.d/20-Ledger.rules
 udevadm trigger
 udevadm control --reload-rules
 usermod -a -G plugdev vagrant
