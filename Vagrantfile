@@ -1,7 +1,7 @@
 Vagrant.configure("2") do |config|
 
 	# Specify the base box
-	config.vm.box = "ubuntu/trusty64"
+	config.vm.box = "ubuntu/bionic64"
 
   config.vm.synced_folder "apps/", "/home/vagrant/apps"
 
